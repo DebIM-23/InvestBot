@@ -1,6 +1,5 @@
 /* stylelint-disable */
-@tailwind base;
-@tailwind components;
+@import "tailwindcss/preflight";
 @tailwind utilities;
 /* stylelint-enable */
 
