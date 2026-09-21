@@ -241,11 +241,10 @@ app.get('/api/history/:sessionId', async (req, res) => {
 });
 
 // Health check
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', service: 'chat-api-gemini', timestamp: new Date().toISOString() });
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Chat API (Gemini 1.5 Flash) running on port ${PORT}`);
-  console.log(`📊 Python service: ${PYTHON_SERVICE}`);
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'ok', service: 'chat-api-gemini' });
 });
